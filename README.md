@@ -1,4 +1,4 @@
-# Recolección de datos sobre nivel de rudio Santo Domingo
+# Recolección de datos sobre nivel de ruido Santo Domingo
 
 Este repositorio contiene las recolecciones de sonido realizadas a través de la aplicación [Noisetube] (noisetube.net). La aplicacion para celulares inteligentes realiza una observacion por segundo, utilizando el microfono de dicho aparato. 
 
