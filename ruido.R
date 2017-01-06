@@ -1,4 +1,4 @@
-setwd("C:/Users/pedro moises/Documents/R/project/ruido")
+setwd("C:/Users/pedro moises/Documents/GitHub/datos-ruido")
 rm(list = ls())
 
 
@@ -11,6 +11,13 @@ n <- lapply(list.files(pattern = "json"), function(x) {fromJSON(x)[[1]][3:5]}) #
 noi <- do.call(rbind, n) #uniendo todo en una sola DB
 noi$db <- as.numeric(noi$db)
 noi$date <- ymd_hms(noi$date, tz = "America/Caracas")
+
+#informacion de las datas
+length(n) #cantidad de archivos
+summary(sapply(n, FUN = function(x) {nrow(x)/3600})) #duraccion de las diferentes grabaciones
+summary(noi$date) #rango de fechas de la recolleccion
+nrow(noi)
+
 
 #selet only the hour and minutes on the posixct
 noi$time <- as.POSIXct(strftime(noi$date, format="%H:%M"), format="%H:%M")
